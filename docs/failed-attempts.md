@@ -1,4 +1,4 @@
-# Failed attempts and open issues
+# What did not work and why
 
 ## Display and boot
 
@@ -35,7 +35,7 @@ It was wrong to conclude that ADB could not help create the shortcut. Driving th
 - **Blank screenshots or no UI text:** Did not prove the bank check passed. Waiting longer and finding actual login fields gave better evidence.
 - **Looking at APK strings:** Did not reveal the app's exact comparison. APKs were inspected, but no banking app was patched.
 
-The next proposed fix was to send the settings commands through Termux's working ADB connection. It was not installed or tested. The home icon currently points to a script whose direct settings step is known to fail.
+The display script passed its check. The failed part was the separate bank-setting command added after it. Sending that command through Termux's ADB connection was suggested, but was not tested from the shortcut.
 
 ## ADB connection and reboot
 
@@ -45,12 +45,12 @@ An ADB auto-enable app had boot receivers and a reference to the wireless debugg
 
 It was also not proved that every ADB restart needs a new key approval, that ADB access is permanent, or that automatic display repair and the bank settings cannot work together.
 
-## Work that was stopped
+## Other things tried
 
-- Cover-screen widgets were explored, then dropped. No finished cover-screen setup is claimed here.
-- Testing a second banking app was deferred.
-- Automatic repair after reboot remains unconfirmed. A boot wrapper was installed, but its settings step has the same failure as the shortcut.
+- Cover-screen widgets were explored, then dropped.
+- A second banking app was identified, but not tested further.
+- A boot wrapper was installed. Automatic display repair after reboot was not confirmed, and its separate bank-setting command failed in the same way as the shortcut's command.
 
-## Next useful check
+## Using the setup after reboot
 
-Fix the shortcut's settings step, then test the actual home icon. Check the new log, screen size, density, offset, debug values, USB connection, and the bank's login screen. Only then test a reboot.
+Reboot moves the UI back toward the middle without changing its size or density. Tap **1 Fix Display** to run the display script again and move it back to the bottom. The bank-setting error described above is separate from this display fix.

@@ -42,7 +42,7 @@ wm density
 dumpsys display | grep mDisplayOffset
 ```
 
-The keyboard was kept as it was. A reboot kept size and density, but changed the offset to `(0,0)`.
+The keyboard was kept as it was. A reboot kept size and density, but changed the offset to `(0,0)`, moving the UI back toward the middle. The home-screen shortcut runs the display script again to move it back to the bottom.
 
 ## 2. Run the fix from Termux
 
@@ -105,4 +105,4 @@ USB ADB remained available in that test. The login fields were confirmed twice. 
 
 After reboot, the values were `adb_enabled=1`, developer options `0`, and wireless debugging `1`. Setting ADB back to `2` worked from the laptop. The bank was not confirmed working again with wireless debugging still at `1`.
 
-The shortcut and boot wrapper were later given direct `/system/bin/settings` commands. Those commands failed inside Termux. Their replacement with ADB shell commands was proposed but was not completed in this chat.
+The shortcut and boot wrapper were later given direct `/system/bin/settings` commands. Those commands failed inside Termux. This was a separate bank-setting step; the display script passed its check. Running the settings commands through ADB was suggested, but was not tested from the shortcut.

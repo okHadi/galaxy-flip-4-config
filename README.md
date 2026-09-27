@@ -4,7 +4,7 @@ Notes from setting up a Galaxy Z Flip 4 on Android 16. The goal was to use the w
 
 No root, bootloader unlock, or flashing was used.
 
-## What worked
+## The setup
 
 - Screen size: `1080x1240`, with density `280`.
 - A display offset of `(0,700)` moved the UI into the bottom half.
@@ -12,16 +12,15 @@ No root, bootloader unlock, or flashing was used.
 - A **1 Fix Display** icon was added to the home screen and confirmed visible.
 - One tested banking app reached its login screen with `adb_enabled=2`, developer options set to `0`, and wireless debugging set to `0`. USB ADB still worked.
 
-## What is not finished
+## After a reboot
 
-- The home shortcut's ADB-setting step failed. The icon exists, but it is not yet a fully working combined fix.
-- A reboot kept the screen size and density, but reset the display offset and some debug settings.
-- Automatic repair after reboot is not confirmed.
-- Banking login and payments were not tested. Results may differ by app or Android update.
+The screen moves back toward the middle. The size and density stay the same. Tap **1 Fix Display** to run the display script again and move the UI back to the bottom.
+
+Reboot also changed some debug settings. The bank-setting tests and the separate ADB command error are covered in the notes below.
 
 ## More details
 
 - [Setup and checks](docs/setup.md)
-- [Failed attempts and open issues](docs/failed-attempts.md)
+- [What did not work and why](docs/failed-attempts.md)
 
-These are notes from this phone, not a ready-to-run installer. They leave out bank names, account details, device IDs, and screenshots.
+These notes describe this phone's setup. Results may differ on another phone or Android version.
